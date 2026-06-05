@@ -6,7 +6,7 @@ This repository leverages **XGBoost** paired with **Fairlearn** to implement a b
 
 ---
 
-## ⚙️ Project Architecture
+## Project Architecture
 
 The system treats hospital data through two decoupled, complementary analytical pipelines:
 1. **The Governance Lens:** Mitigates systemic bias by training machine learning models blindly (withholding demographic traits) and applying cost-sensitive learning to optimize equitable patient care boundaries across demographic slices.
@@ -14,7 +14,7 @@ The system treats hospital data through two decoupled, complementary analytical 
 
 ---
 
-## 🔍 Pipeline 1: Readmission Classification & Fairness Audit
+## Pipeline 1: Readmission Classification & Fairness Audit
 
 ### 1. Exploratory Data Analysis & Sample Auditing
 * **Operational Imbalance:** Resolves severe class scarcity; acute early readmissions ($<30$ days) represent a low baseline prevalence of **~9.59%**.
@@ -34,7 +34,7 @@ Fitting an Ordinary Least Squares ($OLS$) interaction model establishes institut
 
 ---
 
-## 💊 Pipeline 2: Medication Regimen Analytics & Resource Governance
+## Pipeline 2: Medication Regimen Analytics & Resource Governance
 
 This pipeline utilizes market basket analysis to isolate frequent medication co-prescriptions, treatments, and drug combinations, running them through parametric evaluation frameworks to pinpoint how polypharmacy profiles directly drive variations in hospital Length of Stay (LOS).
 
@@ -50,7 +50,7 @@ The pipeline utilizes the **Apriori Algorithm** to mine frequent itemsets and st
 
 ---
 
-## 🚀 Production Deployment Standards
+## Production Deployment Standards
 
 The serialized artifacts generated in this project are optimized for seamless integration within an Electronic Health Record (EHR) discharge workflow:
 1. **Core Safeguard Engine:** Deploy `final_model.pkl` using an operational minority class weight penalty of **7** and a calibrated decision boundary threshold of **$\ge 0.45$**.
@@ -58,7 +58,7 @@ The serialized artifacts generated in this project are optimized for seamless in
 
 ---
 
-## 📦 Installation & Execution
+## Installation & Execution
 
 ### Prerequisites
 * Python 3.10 or higher
@@ -78,21 +78,18 @@ jupyter notebook
 * Navigate to `notebooks/01_readmission_fairness_audit.ipynb` for the machine learning auditing suite.
 * Navigate to `notebooks/02_medication_market_basket_los.ipynb` for the market basket and statistical modeling suite.
 
-### 3. Repository Structure
+## Repository Structure
+```text
 Hospital-Management/
-│
 ├── data/
 │   ├── processed.csv               # Unified historical clinical tracker
 │   └── fairlearn_audit_summary.csv # Progressive fairness validation records
-│
 ├── notebooks/
-│   ├── 01_readmission_fairness_audit.ipynb   # XGBoost + Fairlearn Pipeline
-│   └── 02_medication_market_basket_los.ipynb  # Apriori + ANOVA/Tukey Pipeline
-│
-├── artifacts/                      # Serialized deployment assets
-│   ├── cat_mapping.pkl             # Encoded feature matrix categories
-│   ├── label_encoder.pkl           # Target variable string-to-numeric encoder
-│   └── final_model.pkl             # Production cost-sensitive XGBoost model
-│
+│   ├── readmission_fairness_audit.ipynb   # XGBoost + Fairlearn Pipeline
+│   └── medication_market_basket_los.ipynb  # Apriori + ANOVA/Tukey Pipeline
+│── cat_mapping.pkl             # Encoded feature matrix categories
+│── label_encoder.pkl           # Target variable string-to-numeric encoder
+│── final_model.pkl             # Production cost-sensitive XGBoost model
 ├── requirements.txt                # Unified project dependencies
 └── README.md                       # Comprehensive documentation
+```
