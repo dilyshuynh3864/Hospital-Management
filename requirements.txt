@@ -1,5 +1,6 @@
-# Streamlit Web Interface
+# Streamlit Web Interface & Interactivity
 streamlit>=1.30.0
+plotly>=5.15.0
 
 # Data Wrangling & Numerics
 pandas>=2.0.0
