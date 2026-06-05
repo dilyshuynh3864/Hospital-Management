@@ -48,6 +48,7 @@ Gender Cohort    Accuracy    Precision    Selection Rate     False Negative Rate
 Female (0)       0.624104    0.121212     0.367220           0.544402
 Male (1)         0.674334    0.121697     0.306283           0.603175
 
+
 ## 💊 Pipeline 2: Medication Regimen Analytics & Resource Governance
 
 This pipeline explores patient transactional medication profiles using market basket analysis and statistical inference to map how clinical decision-making affects macro-level hospital capacity.
