@@ -1,0 +1,26 @@
+# Streamlit Web Interface
+streamlit>=1.30.0
+
+# Data Wrangling & Numerics
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Statistical Modeling & Inference
+statsmodels>=0.14.0
+scipy>=1.10.0
+
+# Machine Learning & Algorithmic Governance
+xgboost>=1.7.0
+scikit-learn>=1.2.0
+fairlearn>=0.9.0
+
+# Association Rule Mining (Pipeline 2)
+mlxtend>=0.22.0
+
+# Visualizations & Deployment Serialization
+seaborn>=0.12.0
+matplotlib>=3.7.0
+joblib>=1.2.0
+
+# Notebook Environment (Optional)
+notebook>=7.0.0
